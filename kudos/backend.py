@@ -1,3 +1,6 @@
+import re
+
+
 class DuplicateEmailError(Exception):
     pass
 
@@ -12,7 +15,6 @@ class UserBackend(object):
         self._user_list = []
 
     def create_user(self, email):
-        import re
 
         if not re.match(r"[^@]+@[^@]+\.[^@]+", email):
             raise InvalidEmailFormatError
