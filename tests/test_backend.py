@@ -1,6 +1,5 @@
 import unittest
-from kudos.backend import UserBackend, DuplicateEmailError
-from kudos.backend import InvalidEmailFormatError
+from kudos.backend import (UserBackend, DuplicateEmailError, InvalidEmailFormatError)
 
 
 class UserBackendTestCase(unittest.TestCase):
@@ -10,8 +9,6 @@ class UserBackendTestCase(unittest.TestCase):
         self.assertEquals(len(sut._user_list), 1)
         sut.create_user("andrew@gmail.com")
         self.assertEquals(len(sut._user_list), 2)
-        sut.create_user("can@gmail.com")
-        self.assertEquals(len(sut._user_list), 3)
 
     def test_create_different_user(self):
         sut = UserBackend()
