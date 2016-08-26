@@ -3,8 +3,8 @@ approve_regex: ^:+1:
 reject_regex: ^:-1:
 reset_on_push: true
 reviewers:
-  members:
-    - can-z
-    - xwu30
-  name: pullapprove
-  required: 1
+    members:
+        - can-z
+        - xwu30
+    name: pullapprove
+    required: 1
