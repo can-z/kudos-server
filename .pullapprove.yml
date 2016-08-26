@@ -4,7 +4,7 @@ reject_regex: ^:-1:
 reset_on_push: true
 reviewers:
     members:
-        - can-z
-        - xwu30
+    - can-z
+    - xwu30
     name: pullapprove
     required: 1
