@@ -8,4 +8,4 @@ class IntegrationTestCase(unittest.TestCase):
 
     def test_example_end_point(self):
         result = self.app.get("/")
-        self.assertEqual(result.data, "Hello world!")
+        self.assertEqual(result.data, "Hello World!")
