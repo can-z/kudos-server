@@ -1,4 +1,5 @@
 import unittest
+import six
 import kudos.views as kudos
 
 
@@ -8,4 +9,4 @@ class IntegrationTestCase(unittest.TestCase):
 
     def test_example_end_point(self):
         result = self.app.get("/")
-        self.assertEqual(result.data, bytes("Hello World!", "utf8"))
+        self.assertEqual(result.data, six.b("Hello World!"))
