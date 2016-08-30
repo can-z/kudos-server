@@ -1,5 +1,9 @@
 import unittest
-from kudos.backend import UserBackend, DuplicateEmailError
+from kudos.backend import (
+    DuplicateEmailError,
+    InvalidEmailError,
+    UserBackend,
+)
 
 
 class UserBackendTestCase(unittest.TestCase):
@@ -26,4 +30,10 @@ class UserBackendTestCase(unittest.TestCase):
         email = "john@gmail.com"
         sut.create_user(email)
         with self.assertRaises(DuplicateEmailError):
+            sut.create_user(email)
+
+    def test_invalid_email_format(self):
+        sut = UserBackend()
+        email = "invalidEmail@email_address"
+        with self.assertRaises(InvalidEmailError):
             sut.create_user(email)
